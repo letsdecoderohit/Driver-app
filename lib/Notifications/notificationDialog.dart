@@ -1,5 +1,6 @@
 import 'package:audioplayers/audio_cache.dart';
 import 'package:driver_app/AllScreens/newRideScreen.dart';
+import 'package:driver_app/Assistants/assistantMethods.dart';
 import 'package:driver_app/Models/rideDetails.dart';
 import 'package:driver_app/configMaps.dart';
 import 'package:driver_app/main.dart';
@@ -122,10 +123,8 @@ class NotificationDialog extends StatelessWidget {
 
   void checkAvailabilityOfRide(context){
 
-
-
   rideRequestRef.once().then((DataSnapshot dataSnapshot){
-
+    AssistantMethods.disableHomeTabLiveLocationUpdates();
     Navigator.pop(context);
 
     String theRideId = "";
